@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class TeleportToggleOnR : MonoBehaviour
 {
-    bool goA = true; // true: 去A，false: 去B
+    bool goA = true;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.R))
         {
             if (goA)
-                transform.position = new Vector3(15, 0, 48); // A點
+                transform.position = new Vector3(15, 0, 48);
             else
-                transform.position = new Vector3(0, 0, 15);  // B點
+                transform.position = new Vector3(0, 0, 15); 
 
-            goA = !goA; // 下次換另一點
+            goA = !goA;
         }
     }
 }
